@@ -1,32 +1,32 @@
 ---
 layout: default
-category: about
-title: PunMin's homepage
-description: PunMin's blog
+title: Home
+category: home
 ---
 
-<section class="about-me inner">
-  <h1>
-    <span class="hello">
-      
-    </span>
-  </h1>
-
-
-
-</section>
-
 <section class="inner">
-  <div class="post-recents-in-index">
-    <strong>Recent blog posts</strong>
-  </div>
-  <blockquote>
-    <ul>
-      {% for post in site.posts limit:3 %}
-      <li class="post-list-in-index">
-      <small class="post-list-date-in-index">{{ post.date | date_to_string }}</small><a  href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-      </li>
-      {% endfor %}
-    </ul>
-  </blockquote>
+  <div class="pidex">
+    <blockquote>
+      <p>极致的幸福，存在于孤独的深海。在这样日复一日的生活里，我逐渐和自己达成和解。</p>
+    </blockquote>
+  <div>
+  <ul class="posts">
+    {% for post in site.posts %}
+	  {% capture y %}{{post.date | date:"%Y"}}{% endcapture %}
+	  {% if year != y %}
+		{% assign year = y %}
+		<span class="listing-seperator">{{ y }}</span>
+	  {% endif %}
+    <a class='post-link-in-posts' href="{{ site.url }}{{ post.url }}">
+        <span class='date'>{{ post.date | date: "%b %d" }}</span>
+        <span class='article'>{{ post.title }}</span>
+		<div class="tag-in-index-post">
+        <i class="fa fa-tags"></i>
+          <div class="tag">
+		        {{ post.tags | first }}
+          </div>
+        </div>
+    </a>
+    {% endfor %}
+  </ul>
 </section>

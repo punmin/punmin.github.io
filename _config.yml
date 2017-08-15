@@ -3,6 +3,7 @@ title: Pun Min
 name: PunMin's homepage
 description:  PunMin's blog
 url: http://punmin.com
+static: 
 
 # 自定义post url
 permalink: /blog/:title.html

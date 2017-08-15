@@ -4,14 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    {{ page.title }}
-    {% if page.category == 'blog' and page.url != '/blog/index.html' %}
-    - Pun Min
-    {% endif %}
+    {{ page.title }} - Pun Min
   </title>
-  <link rel="stylesheet" href="../css/site.css">
+  <link rel="stylesheet" href="{{static}}/css/site.css">
+  <link rel="stylesheet" href="{{static}}/css/blog.css">
   <link href="//cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
-  <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link href="{{static}}/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
   {% if page.description %}<meta name="description" content="{{page.description}}" />{% endif %}
 
   <link rel="alternate" hreflang="en" href="/" />
@@ -20,7 +18,7 @@
 
   {% if page.category == 'blog' %}
     {% if page.photo %}
-      <meta property="og:image" content="/images/posts/{{ page.photo }}" />
+      <meta property="og:image" content="{{static}}/images/posts/{{ page.photo }}" />
     {% endif %}
   {% endif %}
 </head>
@@ -29,14 +27,15 @@
   <div class="header-container">
     <header class="inner">
       <nav>
-        <a class="{% if page.category == 'about' %} selected {% endif %}" href="/">About</a>
-        <a class="{% if page.category == 'blog' %} selected {% endif %}" href="/blog/">Blog</a>
+        <a class="{% if page.category == 'home' %} selected {% endif %}" href="/">Home</a>
+        <a class="{% if page.category == 'categories' %} selected {% endif %}" href="/categories.html">Categories</a>
+        <a class="{% if page.category == 'tag' %} selected {% endif %}" href="/tag.html">Tag</a>
         <a href="https://github.com/punmin">Github</a>
       </nav>
 
       <div class="pull-right right logo">
 
-        <a href="http://punmin.com/"><img class="avatar" src="/images/profile_picture.png" alt="My profile picture" /></a>
+        <a href="http://punmin.com/"><img class="avatar" src="{{static}}/images/profile_picture.png" alt="My profile picture" /></a>
       </div>
       <div class="clear"></div>
     </header>
