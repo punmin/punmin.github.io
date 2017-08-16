@@ -6,10 +6,10 @@
   <title>
     {{ page.title }} - Pun Min
   </title>
-  <link rel="stylesheet" href="{{static}}/css/site.css">
-  <link rel="stylesheet" href="{{static}}/css/blog.css">
+  <link rel="stylesheet" href="{{site.url}}/static/css/site.css">
+  <link rel="stylesheet" href="{{site.url}}/static/css/blog.css">
   <link href="//cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
-  <link href="{{static}}/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link href="{{site.url}}/static/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
   {% if page.description %}<meta name="description" content="{{page.description}}" />{% endif %}
 
   <link rel="alternate" hreflang="en" href="/" />
@@ -18,7 +18,7 @@
 
   {% if page.category == 'blog' %}
     {% if page.photo %}
-      <meta property="og:image" content="{{static}}/images/posts/{{ page.photo }}" />
+      <meta property="og:image" content="{{site.url}}/static/images/posts/{{ page.photo }}" />
     {% endif %}
   {% endif %}
 </head>
@@ -28,14 +28,14 @@
     <header class="inner">
       <nav>
         <a class="{% if page.category == 'home' %} selected {% endif %}" href="/">Home</a>
-        <a class="{% if page.category == 'categories' %} selected {% endif %}" href="/categories.html">Categories</a>
-        <a class="{% if page.category == 'tag' %} selected {% endif %}" href="/tag.html">Tag</a>
+        <a class="{% if page.category == 'categories' %} selected {% endif %}" href="/categories/">Categories</a>
+        <a class="{% if page.category == 'tag' %} selected {% endif %}" href="/tag/">Tag</a>
         <a href="https://github.com/punmin">Github</a>
       </nav>
 
       <div class="pull-right right logo">
 
-        <a href="http://punmin.com/"><img class="avatar" src="{{static}}/images/profile_picture.png" alt="My profile picture" /></a>
+        <a href="http://punmin.com/"><img class="avatar" src="{{site.url}}/static/images/profile_picture.png" alt="My profile picture" /></a>
       </div>
       <div class="clear"></div>
     </header>
