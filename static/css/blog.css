@@ -280,7 +280,7 @@ ul.posts li {
 margin-bottom: 1em;
 padding-top: 20px;
 }
-#tag_cloud a {
+#tag_cloud a,.quick_links a{
   color: #555;
   border-radius: 3px;
   text-decoration: none;
