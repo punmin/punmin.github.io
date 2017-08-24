@@ -23,7 +23,5 @@ node_modules
 
 # user files
 _draft
-_posts
 _site
-images/posts
 .project
