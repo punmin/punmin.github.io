@@ -198,6 +198,12 @@ img {
     height: auto;
     margin: 1.5em auto 1.6em auto;
 }
+.post li{
+	text-align: left;
+}
+.post a {
+	word-break: break-all;
+}
 
 .sidebox {
     overflow: auto;
