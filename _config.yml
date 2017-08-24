@@ -2,7 +2,7 @@ title: Pun Min
 
 name: PunMin's homepage
 description:  PunMin's blog
-url: http://punmin.com
+url: https://punmin.github.io/
 
 # 自定义post url
 permalink: /blog/:title.html
