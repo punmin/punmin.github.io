@@ -27,9 +27,9 @@
   <div class="header-container">
     <header class="inner">
       <nav>
-        <a class="{% if page.category == 'home' %} selected {% endif %}" href="/">Home</a>
-        <a class="{% if page.category == 'categories' %} selected {% endif %}" href="/categories.html">Categories</a>
-        <a class="{% if page.category == 'tag' %} selected {% endif %}" href="/tag.html">Tag</a>
+        <a class="{% if page.category == 'home' %} selected {% endif %}" href="{{ site.url }}">Home</a>
+        <a class="{% if page.category == 'categories' %} selected {% endif %}" href="{{ site.url }}categories.html">Categories</a>
+        <a class="{% if page.category == 'tag' %} selected {% endif %}" href="{{ site.url }}tag.html">Tag</a>
         <a href="https://github.com/punmin">Github</a>
       </nav>
 
