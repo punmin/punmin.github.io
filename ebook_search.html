@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>ebook search</title>
+
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+      .row-margin-top {
+          margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">   
+        
+        <div class="row row-margin-top">
+          <div class="col-xs-10">
+            <h3>电子书搜索</h3>
+            <input id="sKey" type="text" class="form-control" placeholder="Search for...">
+            <span class="label label-default label-xs label-info">点击下面哪个按钮，就跳转到对应的书站搜索</span>
+          </div>
+        </div>
+
+        <div class="row row-margin-top">         
+          <div class="col-xs-4 col-md-10">
+            <span class="label label-default">中文站</span>
+            <a href="http://mebook.cc/?s=">mebook</a>
+            <a href="https://sobooks.cc/search/">sobooks</a>
+            <a href="https://book.shuyuzhe.com/search/">shuyuzhe</a>
+            <a href="http://www.kindlepush.com/search/?sKey=">kindlepush</a>
+          </div>
+          <div class="col-xs-4 col-md-10">
+            <span class="label label-default">英文站</span>
+            <a href="http://www.gutenberg.org/ebooks/search/?query=">gutenberg</a>
+            <a href="http://www.feedbooks.com/books/search/?query=">feedbooks</a>
+            <a href="http://b-ok.org/s/?q=">b-ok</a>   
+          </div>
+        </div>
+
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      function doSearch(obj) {
+        location.href = obj.href + encodeURIComponent($('#sKey').val()).replace(/%20/g, '+');
+      }
+
+     $(document).ready(function(){
+          $("a").click(function(obj){
+            doSearch(this);return false;
+          });
+          $("a").addClass("btn btn-default btn-sm");
+          $("a").attr("role","button")
+      });      
+    </script>
+  </body>
+</html>
